@@ -1,1 +1,1 @@
-/Users/rdw/git/advent-of-code-2022-kotlin/aoc01/build/classes/kotlin/main/MainKt.class
+/Users/rdw/git/advent-of-code-2022-kotlin/aoc01/build/classes/kotlin/main/MainKt$main$1.class:/Users/rdw/git/advent-of-code-2022-kotlin/aoc01/build/classes/kotlin/main/MainKt.class

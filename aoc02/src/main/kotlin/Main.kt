@@ -1,5 +1,4 @@
 import java.io.File
-import java.io.StringReader
 
 fun main() {
     val inputFile: String = "/Users/rdw/git/advent-of-code-2022-kotlin/aoc02/src/main/resources/input"

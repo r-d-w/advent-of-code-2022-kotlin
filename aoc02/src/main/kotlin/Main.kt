@@ -1,4 +1,5 @@
 import java.io.File
+import java.io.StringReader
 
 fun main() {
     val inputFile: String = "/Users/rdw/git/advent-of-code-2022-kotlin/aoc02/src/main/resources/input"
@@ -10,21 +11,27 @@ fun main() {
         "Y" to 2,
         "Z" to 3,
     )
-    val winMap: Map<Pair<String, String>, Int> = mapOf(
-        Pair("A", "Z") to 0,
-        Pair("B", "X") to 0,
-        Pair("C", "Y") to 0,
-        Pair("A", "X") to 3,
-        Pair("B", "Y") to 3,
-        Pair("C", "Z") to 3,
-        Pair("A", "Y") to 6,
-        Pair("B", "Z") to 6,
-        Pair("C", "X") to 6,
+    val resultMap: Map<String, Pair<Int, Map<String, String>>> = mapOf(
+        "X" to Pair(0, mapOf(
+            "A" to "Z",
+            "B" to "X",
+            "C" to "Y",
+        )),
+        "Y" to Pair(3, mapOf(
+            "A" to "X",
+            "B" to "Y",
+            "C" to "Z",
+        )),
+        "Z" to Pair(6, mapOf(
+            "A" to "Y",
+            "B" to "Z",
+            "C" to "X",
+        )),
     )
     var points: Int = 0
     File(inputFile).forEachLine(action = fileLoop@ fun(line: String) {
         val parts: List<String> = line.split(" ")
-        points += pointMap[parts[1]]!! + winMap[Pair(parts[0], parts[1])]!!
+        points += pointMap[resultMap[parts[1]]!!.second[parts[0]]]!! + resultMap[parts[1]]!!.first
     })
     println("$points")
 }

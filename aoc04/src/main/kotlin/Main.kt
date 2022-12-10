@@ -8,7 +8,8 @@ fun main() {
             val elfList: List<Int> = bothElves.split("-").map { it.toInt() }
             Pair(elfList[0], elfList[1])
         }
-        println("$elfOne $elfTwo")
+        if (((elfOne.first >= elfTwo.first) && (elfOne.second <= elfTwo.second)) || ((elfTwo.first >= elfOne.first) && (elfTwo.second <= elfOne.second)))
+            points += 1
     }
     println(points)
 }

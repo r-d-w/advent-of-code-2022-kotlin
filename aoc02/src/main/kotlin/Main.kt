@@ -28,7 +28,7 @@ fun main() {
         )),
     )
     var points: Int = 0
-    File(inputFile).forEachLine(action = fileLoop@ fun(line: String) {
+    File(inputFile).forEachLine(action = fun(line: String) {
         val parts: List<String> = line.split(" ")
         points += pointMap[resultMap[parts[1]]!!.second[parts[0]]]!! + resultMap[parts[1]]!!.first
     })

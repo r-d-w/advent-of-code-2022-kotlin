@@ -16,9 +16,13 @@ fun main() {
         } else if (line.length in 17..19) {
             val (numberMoves: Int, fromStack: Int, toStack: Int) = line.split(" ").toList().slice(1..5 step 2).map { it.toInt() }
             var moveCounter: Int = 0
+            val tempStack: ArrayDeque<Char> = ArrayDeque()
             while (moveCounter < numberMoves) {
-                stacks[toStack]!!.addFirst(stacks[fromStack]!!.removeFirst())
+                tempStack.addFirst(stacks[fromStack]!!.removeFirst())
                 moveCounter++
+            }
+            for (box: Char in tempStack.iterator()) {
+                stacks[toStack]!!.addFirst(box)
             }
         }
     }

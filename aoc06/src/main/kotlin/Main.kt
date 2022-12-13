@@ -9,7 +9,7 @@ fun main() {
         bytes.forEach { byte ->
             val curChar: Char = byte.toInt().toChar()
             charCounts[curChar] = charCounts[curChar]!! + 1
-            if (stack.size == 4) {
+            if (stack.size == 14) {
                 if ((curChar in stack) || (charCounts.filterValues { it >= 2 }.isNotEmpty())) {
                     val offStack: Char = stack.removeFirst()
                     charCounts[offStack] = charCounts[offStack]!! - 1
